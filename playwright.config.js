@@ -8,6 +8,7 @@ module.exports = defineConfig({
 
   expect: {
 
+    /* This timeout will wait for an element for max 5 seconds  */
     timeout: 5000
   },
 
@@ -15,8 +16,8 @@ module.exports = defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
    
-    browserName : 'webkit',
-    headless : true
+    browserName : 'chromium',
+    headless : false
 
 
   },

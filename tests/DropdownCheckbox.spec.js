@@ -34,7 +34,7 @@ test('handlingDropdownAndRadiobuttons', async ({page})=>{
     await expect(blinkingLink).toHaveAttribute("class","blinkingText");
 })
 
-test.only('Handlind The Child Windows',async ({browser})=>{
+test('Handlind The Child Windows',async ({browser})=>{
 
     const context = await browser.newContext();
     const page= await context.newPage();
@@ -59,7 +59,7 @@ test.only('Handlind The Child Windows',async ({browser})=>{
 
    await userName.type(domainName);
 
-   await page.pause();
+//    await page.pause();
 
 
 //    const [newPage, newPage2]= await  Promise.all([

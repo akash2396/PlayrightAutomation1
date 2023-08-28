@@ -23,5 +23,6 @@ test('Browser context validation', async ({page})=>{
    
     const pageTitles = await allTitles.allTextContents();
     console.log(pageTitles);
+    page.locator("user").click();
 
 })

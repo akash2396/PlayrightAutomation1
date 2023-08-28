@@ -39,6 +39,40 @@ test.only('Complete Test Scenario og Rahulsheety website', async({page})=>{
 
  expect(booleanValue).toBeTruthy();
 
+ await page.locator("button[class='btn btn-primary']").nth(2).click();
+
+ page.locator("input[placeholder*='Country']").type("ind",{delay:100});
+
+ const dropdownValues = page.locator("section.ta-results");
+ //const countryName = " India";
+
+
+ await dropdownValues.waitFor();
+
+ const countOfDropdownVales = await dropdownValues.locator("button").count();
+
+ for(let i=0;i<countOfDropdownVales;i++)
+ {
+   
+   const text = await dropdownValues.locator("button").nth(i).textContent();
+   console.log(text);
+   if(text===" India")
+    {
+        await dropdownValues.locator("button").nth(i).click();
+        break;
+    }
+ }
+
+  
+await page.locator(".action__submit").click();
+
+await expect(page.locator(".hero-primary")).toHaveText(" Thankyou for the order. ");
+
+const orderId = await page.locator("label[class='ng-star-inserted']").textContent();
+
+console.log(orderId);
+
+
 
 
 

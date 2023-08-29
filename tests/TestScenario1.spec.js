@@ -1,6 +1,6 @@
 const {page,expect, test}= require('@playwright/test');
 
-test.only('Complete Test Scenario og Rahulsheety website', async({page})=>{
+test('Complete Test Scenario og Rahulsheety website', async({page})=>{
 
     await page.goto("https://rahulshettyacademy.com/client/");
     await page.locator("#userEmail").fill("akashshingavi@gmail.com");
